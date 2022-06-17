@@ -1,0 +1,160 @@
+SOL - DATA QUERY LANGUAGE
+
+
+1)what is Data.
+
+2)what is Database
+
+3)Operations on Database
+
+4)Explain DBMS
+
+5)Explain RDBMS
+
+6)RDBMS And DBMS difference
+
+7)ABOUT Relational model
+
+8)Datatypes And Constroints
+
+9)Types of datatypes and constraints
+
+10)Explain DATATYPES
+
+       CHAR
+       VARCHAR/ VARCHAR2
+       DATE
+       NUMBER
+       LARGE OBJECT
+
+     CONSTRAINTS:-
+
+       UNIQUE
+       NOTNULL
+       CHECK
+       PRIMARY KEY & characteristics
+       FOREIGN KEY& characteristics
+
+11).characteristic of mull.
+
+12).Overview of SOL
+
+13).what is DDL and its definition.
+
+14).Explain
+
+SELECT ,PROJECTION,SELECTION,JOINS
+
+15) What is Asterik and its usage.
+
+(16) Usage of semicolon
+
+17).write a query to display list of tables from database ?
+
+18).what is DISTINCT clause and usages
+
+19).What is expression
+
+20).what does expression contains? 
+
+21). Types of operands and types of literals
+
+22).Purpose of ALias, and its usage
+
+23).select clasue definition
+
+24).what is where clause and its usage
+
+25). Operators in SQL and types
+   
+   1.Arithematic operators
+
+   2.concatenation operators
+
+   3.Logical operators
+
+what is AND.
+
+        OR
+
+        NOT
+
+Special operators.
+
+	IN
+
+	NOT IN
+
+	BETWEEN
+
+	NOT BETWEEN
+
+	IS NOT
+
+	LIKE
+
+	NOT LIKE
+
+26).Functions/methods Definition.
+
+27).Types of functions
+
+28).Types at Inbuilt functions.
+
+29).what it single Row function.
+
+30).what is Multi fow function. 31 Rules of Multi row function
+
+32).What is Group By Clause and order of executions
+
+33).what is Group by expression
+
+34).what is Having clause and its comments
+
+35).what is subouery? 
+
+36).working principle of sub query?
+
+37).Give a Picture about two types of cases in Subquery
+
+38).Types of subQuery
+
+39).What is Single row sub query 40 what is multirow subquery.
+
+41).What is Nested subquery
+
+42).Give a picture of 2 cases in nested subquery
+
+43).Correlated subquery and its comments
+
+44).Differences of subquery and corelated subquery
+
+45).order by clause and comments
+
+46).What is  Escape characters.
+
+47).what is joins
+
+48).Types of joins
+
+49).What is Cartesian join
+
+50).What is inner join 
+
+51).What is outer join and types 
+
+     → left outer join
+
+     → Right outer join.
+
+     → outer join.
+
+52).What is Natural joins
+
+53).What is self joins
+
+
+54).Types of single row function and what are they ?
+
+
+55).What is Null Value logic definition
