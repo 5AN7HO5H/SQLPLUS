@@ -1,0 +1,201 @@
+DATA DEFINITION LANGUAGE
+
+This statement is used to construct objects /tables in the database 
+
+CREATE
+---------
+
+CREATE TABLE MEMBER(NAME VARCHAR(20) NOT NULL,PERSON_ID NUMBER(5) PRIMARY KEY,EMAIL_ID VARCHAR(25),MOBILE_NO NUMBER(10) UNIQUE NOT NULL,DOB DATE);
+
+Table created.
+
+DESC MEMBER;
+
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ NAME                                                  NOT NULL VARCHAR2(20)
+ PERSON_ID                                             NOT NULL NUMBER(5)
+ EMAIL_ID                                                       VARCHAR2(25)
+ MOBILE_NO                                             NOT NULL NUMBER(10)
+ DOB                                                            DATE
+
+RENAME;
+--------
+
+RENAME MEMBER TO MEMBERS_DETAILS;
+
+Table renamed.
+
+DESC MEMBERS_DETAILS;
+
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ NAME                                                  NOT NULL VARCHAR2(20)
+ PERSON_ID                                             NOT NULL NUMBER(5)
+ EMAIL_ID                                                       VARCHAR2(25)
+ MOBILE_NO                                             NOT NULL NUMBER(10)
+ DOB                                                            DATE
+
+ALTER
+-----
+
+TO ADD A COLUMN
+-----------------
+
+ALTER TABLE MEMBERS_DETAILS ADD PINCODE NUMBER(6) NOT NULL;
+
+Table altered.
+
+ DESC MEMBERS_DETAILS;
+
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ NAME                                                  NOT NULL VARCHAR2(20)
+ PERSON_ID                                             NOT NULL NUMBER(5)
+ EMAIL_ID                                                       VARCHAR2(25)
+ MOBILE_NO                                             NOT NULL NUMBER(10)
+ DOB                                                            DATE
+ PINCODE                                               NOT NULL NUMBER(6)
+
+2.TO DROP A COLUMN
+------------------
+ALTER TABLE MEMBERS_DETAILS DROP COLUMN PINCODE;
+
+Table altered.
+
+DESC MEMBERS_DETAILS;
+
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ NAME                                                  NOT NULL VARCHAR2(20)
+ PERSON_ID                                             NOT NULL NUMBER(5)
+ EMAIL_ID                                                       VARCHAR2(25)
+ MOBILE_NO                                             NOT NULL NUMBER(10)
+ DOB                                                            DATE
+
+3.TO CHANGE THE DATATYPES;
+--------------------------
+
+ALTER TABLE MEMBERS_DETAILS MODIFY DOB NUMBER(5);
+
+Table altered.
+
+ DESC MEMBERS_DETAILS;
+
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ NAME                                                  NOT NULL VARCHAR2(20)
+ PERSON_ID                                             NOT NULL NUMBER(5)
+ EMAIL_ID                                                       VARCHAR2(25)
+ MOBILE_NO                                             NOT NULL NUMBER(10)
+ DOB                                                            NUMBER(5)
+
+4. TO CHANGE THE NOTNULL CONSTRAINT
+-----------------------------------
+
+ALTER TABLE MEMBERS_DETAILS MODIFY MOBILE_NO  NULL;
+
+Table altered.
+
+DESC MEMBERS_DETAILS;
+
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ NAME                                                  NOT NULL VARCHAR2(20)
+ PERSON_ID                                             NOT NULL NUMBER(5)
+ EMAIL_ID                                                       VARCHAR2(25)
+ MOBILE_NO                                                      NUMBER(10)
+ DOB                                                            NUMBER(5)
+
+5.TO RENAME THE COLUMN NAME 
+
+ALTER TABLE MEMBERS_DETAILS RENAME COLUMN MOBILE_NO TO MOBILE;
+
+Table altered.
+
+DESC MEMBERS_DETAILS;
+
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ----------------------------------
+ NAME                                                  NOT NULL VARCHAR2(20)
+ PERSON_ID                                             NOT NULL NUMBER(5)
+ EMAIL_ID                                                       VARCHAR2(25)
+ MOBILE                                                         NUMBER(10)
+ DOB                                                            NUMBER(5)
+
+6.TO MODIFYT THE CONTSTRAINTS
+-----------------------------
+
+CREATE TABLE MEMBER_DEPT( DEPTID NUMBER(10) NOT NULL UNIQUE ,DNAME VARCHAR(20) NOT NULL);
+
+Table created
+
+ALTER TABLE MEMBERS_DETAILS ADD CONSTRAINT DEPTID FOREIGN KEY (PERSON_ID) REFERENCES MEMBER_DEP
+T(DEPTID);
+
+Table altered.
+
+TRUNCATE
+--------
+
+TRUNCATE TABLE MEMBERS_DETAILS;
+
+Table truncated.
+
+DROP 
+----
+
+DROP TABLE MEMBERS_DETAILS;
+
+Table dropped.
+
+SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+MEMBER_DEPT                    TABLE
+BIN$4CB23ktjQWm1xG4PDYHFaw==$0 TABLE
+
+FLASHBACK TABLE MEMBERS_DETAILS TO BEFORE DROP;
+
+Flashback complete.
+
+SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+MEMBERS_DETAILS                TABLE
+MEMBER_DEPT                    TABLE
+
+ DROP TABLE MEMBERS_DETAILS;
+
+Table dropped.
+
+ PURGE TABLE MEMBERS_DETAILS;
+
+Table purged.
+
+SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+MEMBER_DEPT                    TABLE
+
+ CREATE TABLE RIDES
+ ( START_LOCATION VARCHAR(25) NOT NULL,
+ END_LOCATION VARCHAR(25) NOT NULL,
+TRIP_CODE NUMBER(5) PRIMARY KEY,
+TRIP_DISTANCE NUMBER(5,1)
+);
